@@ -19,7 +19,8 @@ class TaskController extends Controller
     public function store(TaskRequest $request, TaskService $taskService)
     {
         $task = $taskService->createTask($request->toDto());
-        return TaskResource::make($task);
+        dd($request->toDto());
+        dd(TaskResource::make($task));
     }
 
     public function destroy(Request $request, TaskService $taskService)
